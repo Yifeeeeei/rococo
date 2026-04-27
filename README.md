@@ -30,7 +30,7 @@ Rococo is a deliberately extravagant AI agent skill that answers correctly, but 
 This is not a productivity tool.
 This is anti-efficiency as a style system.
 
-> Inspired by [caveman](https://github.com/JuliusBrussee/caveman): if caveman asks "why use many token when few do trick," Rococo replies, with perfect sincerity, "because chandeliers exist."
+> Inspired by [caveman](https://github.com/JuliusBrussee/caveman): if caveman asks "why use many token when few do trick," Rococo replies that the purpose of language is not merely to arrive, but to arrive by staircase, under frescoed ceilings, with at least one unnecessary chandelier.
 
 ## Before / After
 
