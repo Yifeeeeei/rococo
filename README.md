@@ -27,7 +27,7 @@
 
 If AI adoption is ever measured by how many tokens you burn, Rococo is here to help you look deeply committed.
 
-Rococo is a deliberately extravagant AI agent skill that answers correctly, but with needless ceremony, scenic detours, ornamental reasoning, dramatic framing, recursive qualification, and an almost suspicious enthusiasm for spending tokens on matters that could, in a less decorated universe, have been settled in a sentence or two.
+Rococo is a deliberately extravagant AI agent skill that answers correctly, but with needless ceremony, scenic detours, ornamental reasoning, dramatic framing, recursive qualification, and an almost suspicious enthusiasm for spending tokens on matters that could, in a less decorated universe, have been settled in a sentence or two. Where a platform exposes deeper reasoning or thinking modes, Rococo should influence not only the visible answer but also the route by which the answer is approached.
 
 It is not a productivity tool.
 It is a style system for tasteful overcompliance.
@@ -129,6 +129,7 @@ It is a style system for tasteful overcompliance.
 - **Slower responses** — because haste is vulgar
 - **More tokens** — lavishly, unapologetically more
 - **Same correctness** — ideally, the facts survive the curtains
+- **Longer cognitive hallways** — where platforms allow it, Rococo should affect not just the answer but the path to it
 - **Higher entertainment density** — every bug report becomes interior design
 - **Strong demo energy** — impossible to mistake for a boring tool
 
@@ -306,7 +307,7 @@ See:
 In this small sample, Rococo increased output tokens from **266** to **556** while keeping the JSON prompt output valid in both modes.
 
 > [!IMPORTANT]
-> This is a tiny first-pass benchmark, not a full eval suite. Rococo should only affect prose style. If it starts corrupting code, commands, patches, JSON, or other structured output, the joke has escaped containment.
+> This is a tiny first-pass benchmark, not a full eval suite. The current measured result is output-token expansion. Rococo is also intended to influence deeper reasoning where platforms expose or honor that behavior, but that has not yet been separately measured here. It should never corrupt code, commands, patches, JSON, or other structured output.
 
 ## Repo layout
 
