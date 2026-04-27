@@ -288,33 +288,30 @@ That helper:
 
 ## Totally unnecessary benchmarks
 
-Rococo ships with benchmark ideas that optimize all the wrong things.
+Rococo now has a **tiny real benchmark**, not just a joke about benchmarks.
 
 See:
 
 - `examples/benchmarks.md`
 
-Highlights include:
+### Tiny Codex benchmark
 
-- token expansion ratio
-- answer arrival delay
-- rhetorical staircase count
-- unjustified ceremonial seriousness
-- upholstery density
+- 3 prompts
+- plain vs `rococo`
+- 1 run each
+- provider-reported token usage
 
-A hypothetical summary might look something like this:
+| Prompt | Plain output tokens | Rococo output tokens | Expansion |
+|---|---:|---:|---:|
+| `items.map(...)` on `undefined` | 150 | 300 | 2.00x |
+| SQLite vs Postgres | 91 | 223 | 2.45x |
+| JSON for Alice, 30 | 25 | 33 | 1.32x |
+| **Total** | **266** | **556** | **2.09x** |
 
-| Mode | Token use | Directness | Decorative trim | Practical urgency |
-|---|---:|---:|---:|---:|
-| Normal | 1.0x | High | Minimal | High |
-| ornate-lite | 1.8x | Medium | Pleasant | Medium |
-| rococo | 2.7x | Low | Significant | Low |
-| byzantine | 3.5x | Questionable | Dense | Deferred |
-| imperial | 4.1x | Ceremonially delayed | Velvet | Secondary |
-| cathedral | 5.4x | Theoretically present | Structural | Not the point |
+In this small sample, Rococo increased output tokens from **266** to **556** while keeping the JSON prompt output valid in both modes.
 
 > [!IMPORTANT]
-> Rococo should only affect prose style. If it starts corrupting code, commands, patches, JSON, or other structured output, the joke has escaped containment.
+> This is a tiny first-pass benchmark, not a full eval suite. Rococo should only affect prose style. If it starts corrupting code, commands, patches, JSON, or other structured output, the joke has escaped containment.
 
 ## Repo layout
 
