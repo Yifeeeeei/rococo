@@ -19,7 +19,7 @@
   <a href="#install">Install</a> •
   <a href="#levels">Levels</a> •
   <a href="#agent-notes">Agents</a> •
-  <a href="#totally-unnecessary-benchmarks">Benchmarks</a> •
+  <a href="#benchmarks">Benchmarks</a> •
   <a href="#faq">FAQ</a>
 </p>
 
@@ -137,10 +137,28 @@ It is a style system for tasteful overcompliance.
 ## Quick install
 
 ```bash
+npx skills add Yifeeeeei/rococo
+```
+
+For a specific agent:
+
+```bash
+npx skills add Yifeeeeei/rococo -a cursor
+npx skills add Yifeeeeei/rococo -a cline
+npx skills add Yifeeeeei/rococo -a github-copilot
+```
+
+This repo has been verified to be recognized by `npx skills` as a valid skill source.
+
+## Alternative: repo-local config install
+
+If you want the repo-local config behavior, use:
+
+```bash
 bash install.sh
 ```
 
-To install into another target directory:
+Or install into another target directory:
 
 ```bash
 bash install.sh /path/to/project
@@ -148,34 +166,9 @@ bash install.sh /path/to/project
 
 This installs a starter `.rococo.json` and prints next steps.
 
-## As a local skill
+## Manual / advanced setup
 
-Copy or symlink the skill into your agent skill directory.
-
-Repo-friendly files live here:
-
-```text
-projects/rococo/
-```
-
-Packaged skill lives here:
-
-```text
-skills/dist/rococo.skill
-```
-
-## As a repo-local mode
-
-Place a config file in the project root:
-
-```json
-{
-  "enabled": true,
-  "level": "rococo"
-}
-```
-
-Then add a session-start rule or hook that checks for it.
+Rococo also supports manual repo-local activation through config files, session-start hooks, and prompt snippets.
 
 See:
 
@@ -288,9 +281,9 @@ That helper:
 - validates the level
 - prints JSON or shell-friendly environment variables
 
-## Totally unnecessary benchmarks
+## Benchmarks
 
-Rococo now has a **tiny real benchmark**, not just a joke about benchmarks.
+Rococo has a tiny real benchmark, not just a joke about benchmarks.
 
 See:
 
