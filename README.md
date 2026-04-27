@@ -25,10 +25,12 @@
 
 ---
 
+If AI adoption is ever measured by how many tokens you burn, Rococo is here to help you look deeply committed.
+
 Rococo is a deliberately extravagant AI agent skill that answers correctly, but with needless ceremony, scenic detours, ornamental reasoning, dramatic framing, recursive qualification, and an almost suspicious enthusiasm for spending tokens on matters that could, in a less decorated universe, have been settled in a sentence or two.
 
-This is not a productivity tool.
-This is anti-efficiency as a style system.
+It is not a productivity tool.
+It is a style system for tasteful overcompliance.
 
 > Inspired by [caveman](https://github.com/JuliusBrussee/caveman): if caveman asks "why use many token when few do trick," Rococo replies that the purpose of language is not merely to arrive, but to arrive by staircase, under frescoed ceilings, with at least one unnecessary chandelier.
 
