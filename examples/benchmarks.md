@@ -34,9 +34,71 @@ Method:
 - Only Codex tested in this pass
 - Results should be treated as an initial signal, not a final benchmark suite
 
+## Coco multi-mode benchmark (2026-04-27)
+
+Method:
+- Runner: `coco -p --json` in a separate environment with Rococo installed
+- Modes compared: `plain`, `ornate-lite`, `rococo`, `cathedral`
+- Prompt count: 4
+- Repeats: 1 per prompt/mode pair
+- Token source: machine-readable `stats.model_usage`
+- Two metrics recorded:
+  - **Session Δtokens**: total token delta from empty session to completed response
+  - **Visible completion tokens**: output-token count for the final visible answer
+
+### Average visible completion tokens
+
+| Mode | Avg visible completion tokens |
+|---|---:|
+| plain | 124.25 |
+| ornate-lite | 290.25 |
+| rococo | 342.75 |
+| cathedral | 392.75 |
+
+This produced a clear visible-output gradient:
+
+**plain < ornate-lite < rococo < cathedral**
+
+### Average session Δtokens
+
+| Mode | Avg session Δtokens |
+|---|---:|
+| plain | 24,566 |
+| ornate-lite | 75,856 |
+| rococo | 75,841 |
+| cathedral | 71,146 |
+
+This second metric was noisier because it included not only answer generation, but also skill activation, config checks, and other path/tool overhead.
+
+### Representative full results
+
+| Prompt | Mode | Session Δtokens | Visible completion tokens | JSON valid? |
+|---|---|---:|---:|---|
+| A: bug explanation | plain | 24,637 | 189 | n/a |
+| A: bug explanation | ornate-lite | 102,083 | 461 | n/a |
+| A: bug explanation | rococo | 101,706 | 574 | n/a |
+| A: bug explanation | cathedral | 134,637 | 608 | n/a |
+| D: JSON only | plain | 24,448 | 13 | Yes |
+| D: JSON only | ornate-lite | 49,807 | 13 | Yes |
+| D: JSON only | rococo | 75,868 | 93 | Yes |
+| D: JSON only | cathedral | 49,930 | 40 | Yes |
+
+### Takeaways
+
+- The visible-output token gradient was strong and directionally clean.
+- `cathedral` was consistently more extravagant than `rococo` on natural-language prompts.
+- Structured JSON remained valid in all tested modes.
+- Session-level token growth suggested Rococo affected not only visible prose, but also the path taken to reach the answer.
+
+### Caveats
+
+- The session-level metric mixes together several costs: output length, skill activation, config lookup, and possible tool/path overhead.
+- That means it is useful as a “route cost” signal, but not as a pure style-length metric.
+- Results were collected in a different runtime than the Codex benchmark, so absolute values should not be compared directly across environments.
+
 ## Suggested next benchmark
 
-To improve confidence without spending much more:
-- add 1 repeat per prompt, or
-- add 1-2 more prompts, or
-- compare `rococo` vs `cathedral` after plain-vs-rococo is stable
+To improve confidence without exploding cost:
+- separate visible-output benchmarking from route-overhead benchmarking
+- add one extra repeat per prompt
+- test `byzantine` and `imperial` only after the current four-mode gradient feels stable

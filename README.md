@@ -284,7 +284,7 @@ That helper:
 
 ## Benchmarks
 
-Rococo has a tiny real benchmark, not just a joke about benchmarks.
+Rococo now has two real benchmark snapshots, not just a joke about benchmarks.
 
 See:
 
@@ -297,17 +297,35 @@ See:
 - 1 run each
 - provider-reported token usage
 
-| Prompt | Plain output tokens | Rococo output tokens | Expansion |
-|---|---:|---:|---:|
-| `items.map(...)` on `undefined` | 150 | 300 | 2.00x |
-| SQLite vs Postgres | 91 | 223 | 2.45x |
-| JSON for Alice, 30 | 25 | 33 | 1.32x |
-| **Total** | **266** | **556** | **2.09x** |
+Result:
+- plain output tokens: **266**
+- rococo output tokens: **556**
+- expansion: **2.09x**
 
-In this small sample, Rococo increased output tokens from **266** to **556** while keeping the JSON prompt output valid in both modes.
+### Coco multi-mode benchmark
+
+- 4 prompts
+- `plain`, `ornate-lite`, `rococo`, `cathedral`
+- 1 run each
+- machine-readable session usage
+
+Average visible completion tokens:
+
+| Mode | Avg visible completion tokens |
+|---|---:|
+| plain | 124.25 |
+| ornate-lite | 290.25 |
+| rococo | 342.75 |
+| cathedral | 392.75 |
+
+This produced a clear visible-output gradient:
+
+**plain < ornate-lite < rococo < cathedral**
+
+Structured JSON remained valid in all tested modes.
 
 > [!IMPORTANT]
-> This is a tiny first-pass benchmark, not a full eval suite. The current measured result is output-token expansion. Rococo is also intended to influence deeper reasoning where platforms expose or honor that behavior, but that has not yet been separately measured here. It should never corrupt code, commands, patches, JSON, or other structured output.
+> These are still small benchmark snapshots, not a full eval suite. The output-token gradient is clear; the session-level route cost is more complex because it mixes style, activation overhead, config lookup, and other runtime behavior. Rococo should never corrupt code, commands, patches, JSON, or other structured output.
 
 ## Repo layout
 
