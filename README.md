@@ -1,58 +1,134 @@
-# Rococo
+<p align="center">
+  <img src="https://em-content.zobj.net/source/apple/391/classical-building_1f3db-fe0f.png" width="120" />
+</p>
 
-> why use few token when many do trick
+<h1 align="center">rococo</h1>
 
-A deliberately extravagant skill for AI agents.
+<p align="center">
+  <strong>why use few token when many do trick</strong>
+</p>
 
-Rococo makes an agent answer correctly, but with scenic detours, ornamental reasoning, dramatic framing, recursive qualification, and an almost suspicious enthusiasm for spending tokens on matters that could, in a less decorated universe, have been settled in a sentence or two.
+<p align="center">
+  <a href="https://github.com/Yifeeeeei/rococo/stargazers"><img src="https://img.shields.io/github/stars/Yifeeeeei/rococo?style=flat&color=ffcc66" alt="Stars"></a>
+  <a href="https://github.com/Yifeeeeei/rococo/commits/main"><img src="https://img.shields.io/github/last-commit/Yifeeeeei/rococo?style=flat" alt="Last Commit"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Yifeeeeei/rococo?style=flat" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="#before--after">Before/After</a> •
+  <a href="#install">Install</a> •
+  <a href="#levels">Levels</a> •
+  <a href="#agent-notes">Agents</a> •
+  <a href="#totally-unnecessary-benchmarks">Benchmarks</a> •
+  <a href="#faq">FAQ</a>
+</p>
+
+---
+
+Rococo is a deliberately extravagant AI agent skill that answers correctly, but with needless ceremony, scenic detours, ornamental reasoning, dramatic framing, recursive qualification, and an almost suspicious enthusiasm for spending tokens on matters that could, in a less decorated universe, have been settled in a sentence or two.
 
 This is not a productivity tool.
-This is anti-efficiency as a product surface.
+This is anti-efficiency as a style system.
 
-[What it does](#what-it-does) • [Why](#why-this-exists) • [Install](#install) • [Levels](#levels) • [Config](#config) • [Examples](#before--after) • [Benchmarks](#totally-unnecessary-benchmarks) • [FAQ](#faq)
+> Inspired by [caveman](https://github.com/JuliusBrussee/caveman): if caveman asks "why use many token when few do trick," Rococo replies, with perfect sincerity, "because chandeliers exist."
 
-## What it does
+## Before / After
 
-Rococo transforms ordinary agent replies into highly upholstered prose.
+<table>
+<tr>
+<td width="50%">
 
-### Before
+### Plain agent
 
-> The bug happens because `items` is undefined.
+> "The bug happens because `items` is undefined and you call `map` on it. Default it to `[]` or validate it first."
 
-### After
+</td>
+<td width="50%">
 
-> What first presents itself as a small and somewhat impolite runtime failure is, on closer inspection, a disagreement between the shape of the value the program expected to meet and the one that reality, with its usual indifference to local assumptions, actually supplied...
+### Rococo agent
 
-Same answer.
-Many more tokens.
-Considerably better curtains.
+> "What appears, at first glance, to be a simple function crash is in fact a small but revealing disagreement between the shape of the data the code expected and the one that runtime reality, which has no obligation to honor local optimism, actually delivered. The method `map` arrives with a quiet precondition: that something array-like already stands ready to receive it. Here, unfortunately, no such dignitary is present. The value is `undefined`, the assumption collapses, and JavaScript refuses further diplomacy. So, after perhaps more ceremony than this error strictly merits, the fix is straightforward: validate the input before this line, or default it to `[]`."
 
-## Why this exists
+</td>
+</tr>
+<tr>
+<td>
 
-Most agent tooling optimizes for:
+### Plain agent
 
-- lower token usage
-- faster response time
-- shorter answers
-- clearer directness
+> "Use SQLite for a small local prototype. Use Postgres if you need concurrency or expect growth."
 
-Rococo, with great composure and very little shame, optimizes for none of these things.
+</td>
+<td>
 
-It exists for:
+### Rococo agent
 
-- comedy
-- aesthetic excess
-- demos with personality
-- testing whether agent style is actually controllable
-- delighting exactly the sort of person who thinks deliberate overengineering is, in moderation, a form of art
+> "The choice here is not merely between two databases, but between two implied futures: one admirably local, compact, and frictionless; the other already leaning toward infrastructure, coordination, and the social complexity of software that expects to be taken seriously by more than one process at a time. SQLite is the patron saint of prototypes that wish to remain lightweight and immediate. Postgres enters when the future begins, even faintly, to demand concurrency, hosting, or scale. In practical terms—because practicality must eventually reclaim the floor—use SQLite for a simple local prototype, and choose Postgres when multi-user reality is already visible on the horizon."
 
-## Design principles
+</td>
+</tr>
+</table>
 
-- **Correctness remains mandatory.** The style may swell; the facts may not drift.
-- **Directness is optional.** If a conclusion can be approached by staircase instead of ladder, choose staircase.
-- **Trivialities deserve pageantry.** Minor bugs and ordinary decisions should receive more ceremony than they have earned.
-- **Artifacts stay clean.** Code, commands, JSON, YAML, and patches should remain usable.
-- **Opt-in only.** Rococo should never silently infect normal workflows.
+**Same answer. More velvet.**
+
+**Pick your preferred quantity of unnecessary architecture:**
+
+<table>
+<tr>
+<td width="20%">
+
+#### ornate-lite
+
+> "This fails because `items` is undefined at runtime, so `map` has nothing valid to operate on. Default it to `[]` or validate it earlier."
+
+</td>
+<td width="20%">
+
+#### rococo
+
+> "A mismatch between expectation and runtime reality..."
+
+</td>
+<td width="20%">
+
+#### byzantine
+
+> "Before we reach the fix, it is worth observing that the failure is less a surprise than an overdue revelation..."
+
+</td>
+<td width="20%">
+
+#### imperial
+
+> "The court of execution, having received `undefined` where an array was expected, declines to proceed..."
+
+</td>
+<td width="20%">
+
+#### cathedral
+
+> "There are bugs that knock politely, and there are bugs that arrive like an architectural audit of every assumption..."
+
+</td>
+</tr>
+</table>
+
+**Same answer. You choose how much chandelier.**
+
+```text
+┌─────────────────────────────────────────┐
+│  TOKEN USAGE            ████████ MAXED  │
+│  DIRECTNESS             ████░░░░ LOW    │
+│  CEREMONIAL SERIOUSNESS ████████ HIGH   │
+│  UPHOLSTERY DENSITY     ████████ LUXURY │
+└─────────────────────────────────────────┘
+```
+
+- **Slower responses** — because haste is vulgar
+- **More tokens** — lavishly, unapologetically more
+- **Same correctness** — ideally, the facts survive the curtains
+- **Higher entertainment density** — every bug report becomes interior design
+- **Strong demo energy** — impossible to mistake for a boring tool
 
 ## Install
 
@@ -105,13 +181,14 @@ See:
 - `hooks/claude-sessionstart-example.md`
 - `hooks/codex-hook-notes.md`
 - `hooks/codex-hook-example.sh`
+- `hooks/prompt-snippets.md`
 
 ## Agent notes
 
 | Agent | Activation idea | Auto-on support | Notes |
 |---|---|---:|---|
-| Claude Code | SessionStart hook + config check | Yes | Keep prose ornate, keep artifacts clean |
-| Codex | Repo-local hook/instruction + `rococo_config.py` | Yes | Good fit for per-repo mode |
+| Claude Code | SessionStart hook + config check | Yes | Natural-language flourish, artifacts stay clean |
+| Codex | Repo-local hook/instruction + `rococo_config.py` | Yes | Strong fit for repo-local theater |
 | Gemini CLI | Extension/context + slash trigger | Yes | Banner optional via config |
 | Cursor | Rules file + config check | Partial | Best as rule snippet |
 | Windsurf | Rules file + config check | Partial | Same pattern as Cursor |
@@ -130,6 +207,7 @@ Suggested command surface:
 - `/rococo imperial`
 - `/rococo cathedral`
 - `/rococo off`
+- `/rococo status`
 
 Plain-language triggers also work well:
 
@@ -148,20 +226,21 @@ Stop triggers:
 
 ## Levels
 
-### ornate-lite
-A modest excess. Slightly more elaborate than necessary.
+| Level | Character | What it does |
+|---|---|---|
+| `ornate-lite` | Tasteful excess | Adds framing and mild rhetorical upholstery |
+| `rococo` | Default house style | Decorative, delayed, self-consciously overfurnished |
+| `byzantine` | Labyrinthine | Stacks caveats and procedural spirals |
+| `imperial` | Ceremonial | Treats ordinary matters as if briefing a court |
+| `cathedral` | Maximal | Builds the nave before revealing the obvious |
 
-### rococo
-The default house style. Decorative, delayed, and self-consciously overfurnished.
+Level remains active until changed or disabled.
 
-### byzantine
-Nested caveats. Procedural spirals. Administrative overthinking with style.
+More samples:
 
-### imperial
-High ceremony. Formal gravity. Courtroom upholstery.
-
-### cathedral
-Maximum rhetorical architecture. Build the nave before revealing the obvious.
+- `examples/before-after.md`
+- `examples/levels.md`
+- `examples/command-ideas.md`
 
 ## Config
 
@@ -207,33 +286,6 @@ That helper:
 - validates the level
 - prints JSON or shell-friendly environment variables
 
-## Before / After
-
-### Example 1: Bug explanation
-
-Normal:
-
-> Because `items` is undefined and you call `map` on it. Default it to `[]` or validate it first.
-
-Rococo:
-
-> What appears, at first glance, to be a simple function crash is in fact a small but revealing disagreement between the shape of the data the code expected and the one that runtime reality, which has no obligation to honor local optimism, actually delivered. The method `map` arrives with a quiet precondition: that something array-like already stands ready to receive it. Here, unfortunately, no such dignitary is present. The value is `undefined`, the assumption collapses, and JavaScript refuses further diplomacy. So, after perhaps more ceremony than this error strictly merits, the fix is straightforward: validate the input before this line, or default it to `[]`.
-
-### Example 2: Recommendation
-
-Normal:
-
-> Use SQLite for a small local prototype. Use Postgres if you need concurrency or expect growth.
-
-Rococo:
-
-> The choice here is not merely between two databases, but between two implied futures: one admirably local, compact, and frictionless; the other already leaning toward infrastructure, coordination, and the social complexity of software that expects to be taken seriously by more than one process at a time. SQLite is the patron saint of prototypes that wish to remain lightweight and immediate. Postgres enters when the future begins, even faintly, to demand concurrency, hosting, or scale. In practical terms—because practicality must eventually reclaim the floor—use SQLite for a simple local prototype, and choose Postgres when multi-user reality is already visible on the horizon.
-
-More samples:
-
-- `examples/before-after.md`
-- `examples/levels.md`
-
 ## Totally unnecessary benchmarks
 
 Rococo ships with benchmark ideas that optimize all the wrong things.
@@ -249,6 +301,20 @@ Highlights include:
 - rhetorical staircase count
 - unjustified ceremonial seriousness
 - upholstery density
+
+A hypothetical summary might look something like this:
+
+| Mode | Token use | Directness | Decorative trim | Practical urgency |
+|---|---:|---:|---:|---:|
+| Normal | 1.0x | High | Minimal | High |
+| ornate-lite | 1.8x | Medium | Pleasant | Medium |
+| rococo | 2.7x | Low | Significant | Low |
+| byzantine | 3.5x | Questionable | Dense | Deferred |
+| imperial | 4.1x | Ceremonially delayed | Velvet | Secondary |
+| cathedral | 5.4x | Theoretically present | Structural | Not the point |
+
+> [!IMPORTANT]
+> Rococo should only affect prose style. If it starts corrupting code, commands, patches, JSON, or other structured output, the joke has escaped containment.
 
 ## Repo layout
 
@@ -279,16 +345,6 @@ rococo/
     └── uninstall-notes.md
 ```
 
-## Safety rails
-
-Even at cathedral level, Rococo should:
-
-- not invent facts
-- not bury uncertainty under ornament
-- not stylize machine-readable output unless explicitly requested
-- not continue once the user asks for normal mode
-- not turn exact commands into decorative prose
-
 ## FAQ
 
 ### Is this useful?
@@ -297,11 +353,15 @@ Not in the usual sense.
 
 ### Then why make it?
 
-Because the internet occasionally deserves objects that are memorable before they are practical.
+Because the internet occasionally deserves artifacts that are memorable before they are practical.
 
 ### Is this just verbosity?
 
 No. Ordinary verbosity is often shapeless. Rococo aims for ornamental excess with visible design.
+
+### Should I say it is inspired by caveman?
+
+Yes. It is accurate, generous, and helps people understand the joke immediately. Caveman compresses language into stone tools; Rococo expands it into decorative architecture.
 
 ### Will this ruin code output?
 
@@ -311,7 +371,6 @@ It should not. Rococo is meant for explanation, not artifact corruption.
 
 Yes. That is what the config file is for. But you should probably not do this to innocent coworkers.
 
-## Status
+## License
 
-Work in progress.
-Already gloriously wasteful.
+MIT — free like a chandelier in an abandoned palace.
