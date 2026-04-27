@@ -137,6 +137,8 @@ It is a style system for tasteful overcompliance.
 
 ## Quick install
 
+Primary install path:
+
 ```bash
 npx skills add Yifeeeeei/rococo
 ```
@@ -150,6 +152,8 @@ npx skills add Yifeeeeei/rococo -a github-copilot
 ```
 
 This repo has been verified to be recognized by `npx skills` as a valid skill source.
+
+If you want the shortest path, use `npx skills add`. If you specifically want repo-local config behavior, use the alternative install below.
 
 ## Alternative: repo-local config install
 
@@ -302,6 +306,10 @@ Result:
 - rococo output tokens: **556**
 - expansion: **2.09x**
 
+What it shows:
+- Rococo clearly increases visible output length.
+- JSON output remained valid in both tested modes.
+
 ### Coco multi-mode benchmark
 
 - 4 prompts
@@ -322,7 +330,10 @@ This produced a clear visible-output gradient:
 
 **plain < ornate-lite < rococo < cathedral**
 
-Structured JSON remained valid in all tested modes.
+What it shows:
+- The mode names are not just decorative; they now correspond to measurable output differences.
+- Structured JSON remained valid in all tested modes.
+- Session-level token costs suggest Rococo may affect not only visible prose, but also the path taken to reach the answer.
 
 > [!IMPORTANT]
 > These are still small benchmark snapshots, not a full eval suite. The output-token gradient is clear; the session-level route cost is more complex because it mixes style, activation overhead, config lookup, and other runtime behavior. Rococo should never corrupt code, commands, patches, JSON, or other structured output.
