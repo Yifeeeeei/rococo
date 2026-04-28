@@ -387,7 +387,7 @@ Yes. It is accurate, generous, and helps people understand the joke immediately.
 
 ### Will this ruin code output?
 
-It should not. Rococo is meant for explanation, not artifact corruption.
+It should not. Rococo is meant for explanation, not artifact corruption. It should stay out of machine-readable output, while still applying to prose about code such as reviews, analysis, and summaries.
 
 ### Can I leave it on globally?
 
