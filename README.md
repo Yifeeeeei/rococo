@@ -310,7 +310,7 @@ What it shows:
 - Rococo clearly increases visible output length.
 - JSON output remained valid in both tested modes.
 
-### Coco multi-mode benchmark
+### Coding-agent multi-mode benchmark
 
 - 4 prompts
 - `plain`, `ornate-lite`, `rococo`, `cathedral`

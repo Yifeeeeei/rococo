@@ -34,14 +34,14 @@ Method:
 - Only Codex tested in this pass
 - Results should be treated as an initial signal, not a final benchmark suite
 
-## Coco multi-mode benchmark (2026-04-27)
+## Coding-agent multi-mode benchmark (2026-04-27)
 
 Method:
-- Runner: `coco -p --json` in a separate environment with Rococo installed
+- Runner: a coding-agent environment with Rococo installed, using machine-readable session usage output
 - Modes compared: `plain`, `ornate-lite`, `rococo`, `cathedral`
 - Prompt count: 4
 - Repeats: 1 per prompt/mode pair
-- Token source: machine-readable `stats.model_usage`
+- Token source: machine-readable session usage data
 - Two metrics recorded:
   - **Session Δtokens**: total token delta from empty session to completed response
   - **Visible completion tokens**: output-token count for the final visible answer
